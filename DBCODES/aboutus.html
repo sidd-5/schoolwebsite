@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Stellar Academy</title>	
+<!-- Favicon -->
+    <link rel="icon" type="image/png" href="dblogo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+ header {
+      border-bottom-left-radius: 50px; /* Rounded bottom left */
+      border-bottom-right-radius: 50px; /* Rounded bottom right */
+    }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .wrapper {
+            background-color: #E5D6F8; /* Light purple background */
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 30px; /* Space below */
+            max-width: 30%; /* Limit the width */
+            text-align: left; /* Align to the left */
+        }
+
+        .wrapper h2 {
+            font-family: 'Playfair Display', serif;
+            color: Black;
+            margin: 50;
+            font-size: 1.8rem; /* Title size */
+        }
+
+        .development-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #800000;
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 20px; /* Space below the title */
+        }
+
+        .content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .content .text-section {
+            width: 45%;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left; /* Ensure text is left-aligned */
+             box-shadow: 0 30px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .content .image-wrapper {
+            width: 50%;
+            display: flex;
+            justify-content: center; /* Center the image horizontally */
+            align-items: center;
+        }
+
+        .image-wrapper img {
+    width: 450px;  /* Set a specific width */
+    height:350px; /* Set a specific height */
+    object-fit: cover; /* This will crop the image to maintain aspect ratio if needed */
+    border-radius: 20px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+        .services-section {
+            text-align: center;
+            margin: 0 auto; /* Center align the content */
+        }
+
+        .services-section .bordered-content {
+            display: inline-block; /* Center the border and adjust to content width */
+            padding: 40px;
+            border: 2px solid White;
+            border-radius: 10px;
+           box-shadow: 0 25px 25px rgba(0, 0, 0, 0.2);
+            background-color: #F8F8F8;
+        }
+
+        .services-list {
+            list-style-type: disc; /* Bullets for the list */
+            padding-left: 20px; /* Space from the left */
+            line-height: 1.8; /* Space between each item */
+            color: #333; /* Dark color for text */
+        }
+ .course-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .course {
+            background-color:#E5D6F8;
+            padding: 20px;
+            width: 48%;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .course.left .course-content,
+        .course.right .course-content {
+            flex: 1;
+        }
+        .course.left {
+            margin-right: auto;
+            margin-left: 30px;
+        }
+        .course.right {
+            margin-left: auto;
+            margin-right: 30px;
+        }
+ .course.left .course-content {
+            order: 1;
+        }
+        .course.left .circle-image {
+            order: 2;
+            margin-left: 20px;
+            margin-right: auto;
+        }
+        .course.right .circle-image {
+            order: 1;
+            margin-right: 20px;
+            margin-left: auto;
+        }
+        .course.right .course-content {
+            order: 2;
+        }
+
+
+        .course h2 {
+            font-family: 'Playfair Display', serif;
+            color: #992441;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+                .course p {
+            margin: 0;
+            color: #800000;
+        }
+        .circle-image {
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-left: 20px;
+        }
+        .circle-image img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+}
+.intro-container {
+    display: flex;
+    justify-content: flex-start; /* Align the children horizontally */
+    align-items: center; /* Vertically align both items */
+    width: 100%; /* Adjust the container width to span the full screen */
+    margin: 10px auto; /* Adjust the top and bottom margins */
+    padding: 0 180px; /* Add padding to the left and right */
+}
+.vwrapper {
+    background-color: #F2A4F3; /* Background color */
+    padding: 10px;
+    height: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.vertical-title {
+    color: white;
+    font-size: 2em;
+    writing-mode: vertical-rl; /* Makes the text vertical */
+    transform: rotate(180deg); /* Adjust rotation if needed */
+    margin: 0; /* Removes default margin */
+    text-align: center;
+}
+
+.rectangle-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #F2A4F3, #992441);
+    border-radius: 20px;
+    padding: 20px 40px;
+    width: 70%; /* Adjust width as needed */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-left: 20px; /* Add some space between the title and the rectangle */
+}
+
+.text-content {
+    flex: 1;
+    color: white;
+    font-family: 'The Season';
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-content img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.space-box {
+  background-color: #C5ADED;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.space-box .text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers text vertically */
+  align-items: center; /* Centers text horizontally */
+  text-align: center; /* Ensures text alignment is centered */
+  margin-right: 5px; /* Adds space between text and image */
+}
+
+.space-box img {
+  border-radius: 8px;
+  margin-left: 16px;
+}
+
+.details h1,
+.special-title {
+    font-family: 'The Season';
+    color: #992441;
+    font-weight: bold;
+}
+;
+}
+
+.details h1 {
+    color: #992441;
+    font-weight: bold;
+}
+
+.details p {
+    color: black;
+    margin-top: 8px;
+}
+
+ .wrapper.vision {
+    background-color: #E5D6F8;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto 30px auto;
+    max-width: 30%;
+    text-align: center;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper.vision h1 {
+    font-family: 'Playfair Display', serif;
+    color: #800000;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.wrapper.vision p {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-purple-300">
+    <div class="container mx-auto flex items-center py-2 px-2">
+        <!-- Logo Section -->
+        <div class="flex items-center h-20 pl-0">
+     <a href="home.html">
+            <img 
+                alt="The Stellar Academy Logo - Excellence in Education" 
+                class="full"  height="200" width="200"
+                src="dblogo.png"/></a>
+        </div>
+        <!-- Navigation Section -->
+        <nav class="flex-grow flex justify-center items-center space-x-6 text-white text-lg font-semibold">
+            <a class="hover:text-[#992541]" href="home.html">Home</a>
+            <a class="hover:text-[#992541]" href="courses.html">Courses</a>
+            <a class="hover:text-[#992541]" href="developmentservices.html">Development Services</a>
+            <a class="hover:text-[#992541]" href="prafulta.html">Prafulta</a>
+            <a class="hover:text-[#992541]" href="rentals.html">Rentals</a>
+            <a class="hover:text-[#992541]" href="maingallery.html">Gallery</a>
+            <a class="text-[#992541] underline" href="aboutus.html">About Us</a>
+        </nav>
+    </div>
+</header>
+<!-- Main Content -->
+<h1 class="development-title">About Us</h1>
+    <!-- Content Section -->
+    <div class="content">
+            <p style=" margin-left: 200px; margin-right: 200px;">
+                 Our mission at DB Academy is to become a global leader in holistic education by continuously expanding our course offerings and embracing innovative learning
+ technologies.<br> We aim to build a vibrant community where every learner can access tailored educational experiences, cultivate essential skills, and connect with industry
+ leaders.<br> As we grow, we envision establishing partnerships with organizations worldwide to enhance career pathways and drive social impact, ensuring that quality
+ education is a fundamental right for all.
+            </p>
+        </div>
+
+           </div>
+</div>
+</section>
+<br><br><br>
+
+
+ <!-- Vision(Center Aligned) -->
+    <section>
+    <div class="wrapper vision">
+        <h1>Vision</h1>
+        <p>
+            At DB Academy, we envision a dynamic, inclusive, 
+<br>and innovative learning ecosystem where every individual <br>has access to a comprehensive range of courses under one roof.<br>
+ Our goal is to empower learners of all backgrounds to unlock their full potential, fostering a culture of curiosity and lifelong learning.
+        </p>
+    </div>
+</section>
+
+    <!-- Key Features -->
+    <h1 class="development-title">Our Key Features</h1>
+<!-- Diverse Course  -->
+     <div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <h1 class="development-title">Diverse Course Catalog</h1>
+                <p>
+                    DB Academy will offer an extensive variety of courses spanning technology, arts, business, health, and personal development.
+                    From coding bootcamps and digital marketing to creative writing and wellness workshops, there’s something for everyone.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="8.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+<br>
+<!--  Hands-On Learning  -->
+<div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <h1 class="development-title"> Hands-On Learning</h1>
+                <p>
+                   DB Academy will emphasize experiential learning
+ through workshops, projects, and simulations.
+ Partnerships with businesses and organizations will
+ provide students with opportunities for internships,
+ mentorship, and practical application of skills.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="9.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+<br>
+<!-- Expert Instructors  -->
+<div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <h1 class="development-title"> Expert Instructors</h1>
+                <p>
+                   Our faculty will comprise industry professionals,
+ experienced educators, and thought leaders who
+ bring real-world insights and expertise to the
+ classroom. Regular webinars, guest lectures, and
+ Q&A sessions will enrich the learning experience.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="10.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+ <br>
+<!-- Community Engagement  -->
+<div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <h1 class="development-title"> Community Engagement</h1>
+                <p>
+                   We’ll foster a vibrant community by hosting
+ networking events, study groups, and forums
+ where learners can connect, collaborate, and
+ share knowledge. This sense of belonging will
+ enhance motivation and engagement.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="11.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+<br>
+<!-- Seamless Integration -->
+<div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <h1 class="development-title"> Seamless Integration</h1>
+                <p>
+                    We’ll utilize cutting-edge technology to create a
+ unified platform where learners can easily navigate
+ and enroll in courses. Personalized learning paths
+ will guide users through their educational journeys,
+ allowing them to tailor their experiences based on
+ interests and career goals.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="12.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+ <br>
+<!--  Certification and Career Support  -->
+<div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <h1 class="development-title">Certification and Career Support</h1>
+                <p>
+                  Upon completion of courses, learners will receive
+ recognized certifications to bolster their resumes.
+ Additionally, we’ll provide career coaching, resume
+ workshops, and job placement services to help
+ them transition into the workforce confidently.
+
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="13.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+<br>
+<!--  Global Accessibility  -->
+<div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <h1 class="development-title">  Global Accessibility</h1>
+                <p>
+                    Our courses will be accessible online and offline,
+ catering to a global audience. We’ll offer flexible
+ scheduling, including live sessions, recorded
+ classes, and self-paced options, ensuring that
+ anyone can learn, regardless of their
+ circumstances.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="14.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+ <br>
+<!--Innovation and Adaptation  -->
+<div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <h1 class="development-title"> Innovation and Adaptation</h1>
+                <p>
+                   We will continuously update our curriculum based
+ on industry trends and feedback from learners,
+ ensuring that our offerings remain relevant and
+ valuable. Regular surveys and focus groups will
+ allow us to adapt quickly to the evolving landscape
+ of education and employment.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="15.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+<br>
+<!--  Wellness and Growth-->
+<div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <h1 class="development-title">  Wellness and Growth</h1>
+                <p>
+                     Understanding that learning is a holistic
+ experience, DB Academy will offer wellness
+ programs, mindfulness sessions, and resources for
+ personal development. We believe that a balanced
+ approach to education fosters creativity and
+ resilience.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="16.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+ <br>
+<!--Sustainability and Social Responsibility  -->
+<div class="course-wrapper">
+<!-- Content -->
+<div class="w-1/2 bg-white p-4 rounded-lg">
+    <p class="text-lg" style="color: #800000;">
+        The Stellar DB Academy team brings together a dynamic and skilled group of
+        professionals dedicated to offering diverse educational programs, creative arts,
+        and skill-building opportunities. Each member brings unique expertise and
+        passion, creating an environment that encourages growth, motivation, and
+        community development.
+    </p>
+</div>
+
+        <div class="course right">
+            <div class="course-content">
+                <h1 class="development-title"> Sustainability and Social Responsibility</h1>
+                <p>
+                  Committed to making a positive impact, DB
+ Academy will implement sustainable practices
+ and offer scholarships to underrepresented
+ communities, ensuring that quality education is
+ accessible to all.
+                </p>
+            </div>
+            <!-- Image Section -->
+             <div class="circle-image">
+                <img src="17.png" alt="Diverse course illustrations" />
+            </div>
+        </div>
+    </div>
+<br>
+
+</section>
+<br>
+<section>
+    <div class="intro-container">
+        <div class="vwrapper">
+            <h1 class="vertical-title">The Stellar Team</h1> <!-- Adjust the title content -->
+        </div>
+
+        <div class="rectangle-section">
+            <div class="text-content">
+                 <p> The Stellar Db Academy team brings together a dynamic and skilled group of professionals dedicated to offering diverse educational programs, creative arts, and skill-building opportunities. Each member brings unique expertise and passion, creating an environment that encourages growth, motivation, and community development.
+</p>
+            </div>
+            <div class="image-content">
+                <img src="Canva vectors[1].png" alt="Image Content" />
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<section>
+ <!-- Director -->
+    <div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Dr. Fr. Barnabe D'Souza</h2></a>
+                <div class="price">Director</div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof11.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!-- Asst. Director  -->
+    <div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Fr. Shekar Mariadas</h2></a>
+                <div class="price"> Asst. Director </div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof10.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+ <!-- The Advisor -->
+    <div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Ms. Wenonah Castellino</h2></a>
+                <div class="price"> The Advisor</div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof9.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!-- Coordinating Field Supervisor  -->
+    <div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Mr. Matthew George</h2></a>
+                <div class="price"> Coordinating Field Supervisor </div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof8.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+ <!--NIOS Co-Ordinator -->
+    <div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Mr. Noel Saldana</h2></a>
+                <div class="price">NIOS Co-Ordinator</div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof2.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!-- Co-ordinator  -->
+    <div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Dr. Ramani Kumar</h2></a>
+                <div class="price">  Co-ordinator, Special Educator,
+ Counsellor (Prafulta) </div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof3.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!--  Adminstrative Head  -->
+    <div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Mrs. Angel Golda</h2></a>
+                <div class="price"> Adminstrative Head and Co-ordinator
+ (Stellar)</div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof7.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!-- Content Writer  -->
+    <div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Mrs. Michelle Pereira</h2></a>
+                <div class="price">  Content Writer </div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof4.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!-- Graphic Designer and Cinematographer -->
+    <div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2>  Mr. Bipin Purushottam</h2></a>
+                <div class="price"> Graphic Designer and Cinematographer</div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof6.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!-- Sound Engineer  -->
+    <div class="course-wrapper">
+        <div class="course right">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2> Mr. Joslyn Braganza</h2></a>
+                <div class="price"> Sound Engineer </div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof1.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+ <!--  Marketing Manager -->
+    <div class="course-wrapper">
+        <div class="course left">
+            <div class="course-content">
+                <a href="Skating/Ska.html"> <h2>  Emmanuel Das</h2></a>
+                <div class="price">  Marketing Manager</div>
+                <p></p>
+            </div>
+            <div class="circle-image">
+                <img src="prof5.png" alt="Skating Illustrations" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-purple-200 py-10 mt-10">
+    <div class="container mx-auto text-center space-y-4">
+        <div class="flex justify-center items-center space-x-8">
+            <!-- Address Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Clickable Location Marker -->
+                <a href="https://maps.app.goo.gl/ixyfc4hpU9ZtMYis5" target="_blank" class="hover:text-red-500">
+                    <i class="fas fa-map-marker-alt text-black"></i>
+                </a>
+                <p class="footer-text">
+                    Don Bosco Academy,<br>Gate No: 4, Near Navya Nidhi CHS,<br>Sector 42A, Nerul, Navi Mumbai
+                </p>
+            </div>
+
+            <!-- Logo Section -->
+            <img src="dblogo1.png" class="rounded-full" width="140" height="80" alt="Logo"/>
+
+            <!-- Contact Section -->
+            <div class="flex flex-col items-center space-y-1">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-phone-alt text-black"></i>
+                    <p class="footer-text">+91 89765 72418 </p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-envelope text-black"></i>
+                    <p class="footer-text" >dbareception1@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Separator -->
+        <div style="border-top: 1px solid Black; margin-left: 200px; margin-right: 200px;"></div>
+
+        <!-- Links Section -->
+        <div class="flex justify-center space-x-4 footer-text">
+            <a class="hover:text-red-500" href="Terms.html" style="margin-left: 115px">Terms of Use</a>
+            <span>|</span>
+            <a class="hover:text-red-500" href="Privacy.html">Privacy Policy</a>
+        </div>
+
+        <!-- Footer Note -->
+        <p class="footer-text" style="margin-left: 120px">© 2024 Don Bosco Academy, Nerul. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

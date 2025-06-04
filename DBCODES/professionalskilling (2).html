@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Skilling - The Stellar Academy</title>
+    <link rel="icon" type="image/png" href="dblogo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: #D8BFD8;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header {
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .header img {
+            height: 50px;
+        }
+        .header nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+        .header nav a:hover {
+            color: #FF69B4;
+        }
+        .header nav a.active {
+            color: #FF69B4;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h1 {
+            font-family: 'Playfair Display', serif;
+            color: #800000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .course-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .course {
+            position: relative;
+            background-color: #9D7CBF;
+            padding: 20px;
+            width: 48%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .course:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .course h2 {
+            font-family: 'Playfair Display', serif;
+            color: #992441;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .course .price {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        .course p {
+            margin: 0;
+            color: #FFFFFF;
+        }
+        .course img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .course:hover .details {
+            opacity: 1;
+            visibility: visible;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .footer {
+            background-color: #D8BFD8;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #800000;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #FF69B4;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Full viewport height */
+            padding: 20px;
+        }
+
+        .form-wrapper {
+            padding: 20px;
+            width: 100%;
+            max-width: 500px; /* Keep a maximum width for responsiveness */
+            background-color: #f3f4f6;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-wrapper h2 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #4b5563;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4b5563;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #374151;
+        }
+    </style>
+</head>
+<body>
+
+<header class="bg-purple-300">
+    <div class="container mx-auto flex items-center py-2 px-2">
+        <div class="flex items-center h-20 pl-0">
+            <a href="home.html">
+                <img alt="The Stellar Academy Logo - Excellence in Education" class="full" height="200" width="200" src="dblogo.png"/>
+            </a>
+        </div>
+        <nav class="flex-grow flex justify-center items-center space-x-6 text-white text-lg font-semibold">
+            <a class="hover:text-[#992541]" href="home.html">Home</a>
+            <a class="text-[#992541] underline" href="Courses.html" aria-current="page">Courses</a>
+            <a class="hover:text-[#992541]" href="developmentservices.html">Development Services</a>
+            <a class="hover:text-[#992541]" href="prafulta.html">Prafulta</a>
+            <a class="hover:text-[#992541]" href="rentals.html">Rentals</a>
+            <a class="hover:text-[#992541]" href="maingallery.html">Gallery</a>
+            <a class="hover:text-[#992541]" href="aboutus.html">About Us</a>
+        </nav>
+    </div>
+</header>
+
+<div class="content">
+    <h1>Professional Skilling</h1>
+
+    <div class="course-wrapper">
+        <div class="course">
+            <img src="MKCL.jpg" alt="Computer illustration">
+            <div>
+                <h2>Computer Courses</h2>
+                <div class="price">₹ 6000/-</div>
+                <p>Get acquainted with essential computer skills in this beginner-friendly course. Cover topics such as word processing, spreadsheets, internet usage, and basic troubleshooting to enhance your digital literacy.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="Beauty.jpg" alt="Beautician illustration">
+            <div>
+                <h2>Beautician-Advance Course</h2>
+                <div class="price">₹ 500/-</div>
+                <p>Develop your skills in beauty and personal care with our beautician course. Covering both basic and advanced techniques, this course includes makeup application, skincare, and hair styling, preparing you for a career in the beauty industry.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-wrapper">
+        <div class="course">
+            <img src="Tailoring.jpg" alt="Tailoring illustration">
+            <div>
+                <h2>Tailoring Basic Courses</h2>
+                <div class="price">₹ 300/-</div>
+                <p> Master the art of tailoring with our structured course that offers both basic and advanced levels. Learn to sew, create patterns, and develop your garment-making skills, whether for personal use or professional ambitions.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="Beauty.jpg" alt="Beautician Basic illustration">
+            <div>
+                <h2>Beautician-Basic Course</h2>
+                <div class="price">₹ 300/-</div>
+                <p>Develop your skills in beauty and personal care with our beautician course. Covering both basic and advanced techniques, this course includes makeup application, skincare, and hair styling, preparing you for a career in the beauty industry.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-wrapper">
+        <div class="course">
+            <img src="Culinary.jpg" alt="hospitality and Culinary course">
+            <div>
+                <h2>Hospitality and Culinary course</h2>
+                <div class="price">₹ 30000/-</div>
+                <p>Embark on a culinary journey with our hospitality and culinary course, focusing on both cooking techniques and customer service. Learn from experienced chefs and hospitality professionals to prepare for a rewarding career in the culinary arts.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="RAWC.jpg" alt="RAWC illustration">
+            <div>
+                <h2>RAWC (Refrigerator A/C Washing Machine Repair)</h2>
+                <div class="price">₹ 1000/-</div>
+                <p>Become proficient in appliance repair with our specialized course in RACW. Gain hands-on experience and technical knowledge to troubleshoot and repair household appliances, preparing you for a career in service and maintenance.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- other 6 courses -->
+
+    <div class="course-wrapper">
+        <div class="course">
+            <img src="Tailoring.jpg" alt="Tailoring adv illustration">
+            <div>
+                <h2>Tailoring advanced Courses</h2>
+                <div class="price">₹ 500/-</div>
+                <p>Master the art of tailoring with our structured course that offers both basic and advanced levels. Learn to sew, create patterns, and develop your garment-making skills, whether for personal use or professional ambitions.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="CabinCrew.jpg" alt="CabinCrew illustration">
+            <div>
+                <h2>Diploma in cabin crew Course</h2>
+                <div class="price">₹ 58500/-</div>
+                <p>Prepare for a career in the aviation industry with this comprehensive diploma program. Learn about customer service, safety regulations, and operational procedures for both cabin crew and ground staff roles.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-wrapper">
+        <div class="course">
+            <img src="MKCL.jpg" alt="Coding illustration">
+            <div>
+                <h2>Coding Courses</h2>
+                <div class="price">₹ 1500/-</div>
+                <p>Dive into the fundamentals of coding and programming in this hands-on course. Learn to write simple programs, understand coding logic, and explore various programming languages to ignite your interest in technology.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="GroundStaff.jpg" alt="Ground staff illustration">
+            <div>
+                <h2>Diploma in Ground Staff Course</h2>
+                <div class="price">₹ 58500/-</div>
+                <p>Prepare for a career in the aviation industry with this comprehensive diploma program. Learn about customer service, safety regulations, and operational procedures for both cabin crew and ground staff roles.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-wrapper">
+        <div class="course">
+            <img src="CheckInSecutiry.jpg" alt="cabin crew and ground stass">
+            <div>
+                <h2>Diploma in Cabin Crew & Ground Staff</h2>
+                <div class="price">₹ 69500/-</div>
+                <p>
+                    Prepare for a career in the aviation industry with this comprehensive diploma program. Learn about customer service, safety regulations, and operational procedures for both cabin crew and ground staff roles.
+                </p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+        <div class="course">
+            <img src="Airport.jpg" alt="Airport illustration">
+            <div>
+                <h2>Airport terminal management</h2>
+                <div class="price">₹ 80000/-</div>
+                <p>Explore the operations and management of airport terminals in this specialized course. Understand passenger flow, safety protocols, and the logistics of airport services to excel in this dynamic field.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Tuesday and saturday</p>
+                <p><strong>Time:</strong> 4:00 PM - 5:30 PM</p>
+                <p><strong>Venue:</strong> Abacus Room -2nd Floor</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Form -->
+<div class="content">
+    <div class="form-wrapper">
+        <h2>Enroll Now</h2>
+        <form action="http://localhost/schoolwebsite/dbpscourse.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_name">Guardian's Name</label>
+                <input type="text" id="guardian_name" name="guardian_name" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_contact">Guardian's Contact Number</label>
+                <input type="tel" id="guardian_contact" name="guardian_contact" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="Computer Courses">Computer Courses</option>
+                    <option value="Beautician-Advance Course">Beautician-Advance Course</option>
+                    <option value="Tailoring Basic Courses">Tailoring Basic Courses</option>
+                    <option value="Beautician-Basic Course">Beautician-Basic Course</option>
+                    <option value="Hospitality and Culinary course">Hospitality and Culinary course</option>
+                    <option value="RAWC">RAWC</option>
+                    <option value="Tailoring Advanced Courses">Tailoring Advanced Courses</option>
+                    <option value="Diploma in Cabin Crew">Diploma in Cabin Crew</option>
+                    <option value="Coding Courses">Coding Courses</option>
+                    <option value="Diploma in Ground Staff">Diploma in Ground Staff</option>
+                    <option value="Diploma in Cabin Crew and Ground Staff">Diploma in Cabin Crew and Ground Staff</option>
+                    <option value="Airport Terminal Management">Airport Terminal Management</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<footer class="bg-purple-200 py-10 mt-10">
+    <div class="container mx-auto text-center space-y-4">
+        <div class="flex justify-center items-center space-x-8">
+            <div class="flex items-center space-x-4">
+                <a href="https://maps.app.goo.gl/ixyfc4hpU9ZtMYis5" target="_blank" class="hover:text-red-500">
+                    <i class="fas fa-map-marker-alt text-black"></i>
+                </a>
+                <p class="footer-text">
+                    Don Bosco Academy,<br>Gate No: 4, Near Navya Nidhi CHS,<br>Sector 42A, Nerul, Navi Mumbai
+                </p>
+            </div>
+            <img src="dblogo1.png" class="rounded-full" width="140" height="80" alt="Logo"/>
+            <div class="flex flex-col items-center space-y-1">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-phone-alt text-black"></i>
+                    <p class="footer-text">+91 89765 72418 </p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-envelope text-black"></i>
+                    <p class="footer-text">dbareception1@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid Black; margin-left: 200px; margin-right: 200px;"></div>
+        <div class="flex justify-center space-x-4 footer-text">
+            <a class="hover:text-red-500" href="Terms.html">Terms of Use</a>
+            <span>|</span>
+            <a class="hover:text-red-500" href="Privacy.html">Privacy Policy</a>
+        </div>
+        <p class="footer-text">© 2024 Don Bosco Academy, Nerul. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

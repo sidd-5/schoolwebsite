@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports & Fitness-The Stellar Academy</title>
+
+<!-- Favicon -->
+    <link rel="icon" type="image/png" href="dblogo1.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+@font-face {
+            font-family: 'TheSeasonsAltRegular';
+            src: url('path-to-the-seasons-alt-regular.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Melbourne';
+            src: url('path-to-melbourne.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .header {
+            background-color: #D8BFD8;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 50px;
+        }
+
+        .header nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .header nav a:hover {
+            color: #FF69B4;
+        }
+
+        .header nav a.active {
+            color: #FF69B4;
+        }
+
+        .content {
+            padding: 20px;
+        }
+        .content h1 {
+            font-size: 50px;
+            font-family: 'Playfair Display', serif;
+            color: #800000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .course-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .course {
+            position: relative;
+            background-color: #9D7CBF;
+            padding: 20px;
+            width: 48%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .course:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .course h2 {
+            font-family: 'Playfair Display', serif;
+            color: #992441;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .course .price {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        .course p {
+            margin: 0;
+            color: #FFFFFF;
+        }
+        .course img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .course:hover .details {
+            opacity: 1;
+            visibility: visible;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+
+        .footer {
+            background-color: #D8BFD8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer a {
+            color: #800000;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #FF69B4;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Full viewport height */
+            padding: 20px;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+        .form-wrapper {
+            padding: 20px;
+            width: 100%;
+            max-width: 500px; /* Keep a maximum width for responsiveness */
+            background-color: #f3f4f6;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-wrapper h2 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #4b5563;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4b5563;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #374151;
+        }
+        html{scroll-behavior: smooth;}
+
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-purple-300">
+    <div class="container mx-auto flex items-center py-2 px-2">
+        <!-- Logo Section -->
+        <div class="flex items-center h-20 pl-0">
+     <a href="home.html">
+            <img 
+                alt="The Stellar Academy Logo - Excellence in Education" 
+                class="full"  height="200" width="200"
+                src="dblogo.png"/></a>
+        </div>
+        <!-- Navigation Section -->
+        <nav class="flex-grow flex justify-center items-center space-x-6 text-white text-lg font-semibold">
+            <a class="hover:text-[#992541]" href="home.html">Home</a>
+            <a class="text-[#992541] underline" href="courses.html" aria-current="page">Courses</a>
+            <a class="hover:text-[#992541]" href="developmentservices.html">Development Services</a>
+            <a class="hover:text-[#992541]" href="prafulta.html">Prafulta</a>
+            <a class="hover:text-[#992541]" href="rentals.html">Rentals</a>
+            <a class="hover:text-[#992541]" href="maingallery.html">Gallery</a>
+            <a class="hover:text-[#992541]" href="aboutus.html">About Us</a>
+        </nav>
+    </div>
+</header>
+
+
+<div class="content">
+    <h1>Sports & Fitness</h1>
+
+    <div class="course-wrapper">
+        <a href="#sportsform" class="course">
+            <img src="karate.jpg" alt="Karate">
+            <div>
+                <h2>Karate</h2>
+                <div class="price">₹ 600/-</div>
+                <p>Learn the ancient Chinese art of Karate, an unarmed martial-arts discipline employing kicking, striking, and defensive blocking with arms and legs. Improve your power of concentration, discipline and body power.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Monday and Thursday</p>
+                <p><strong>Time:</strong> 6:00 PM - 7:00 PM</p>
+                <p><strong>Venue:</strong> Assembly Hall</p>
+            </div>
+        </a>
+        <a href="#sportsform" class="course">
+            <img src="Skating.jpg" alt="Skating">
+            <div>
+                <h2>Skating</h2>
+                <div class="price">₹ 1100/-</div>
+                <p>Enjoy the sports as a recreation or sports. Improves your balance, stability and posture.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Monday, Wednesday and Friday</p>
+                <p><strong>Time:</strong> 6:00 PM - 8:00 PM</p>
+                <p><strong>Venue:</strong> Assembly Hall</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="course-wrapper">
+        <a href="#sportsform" class="course">
+            <img src="Tennis.jpg" alt="Badminton">
+            <div>
+                <h2>Badminton</h2>
+                <div class="price">₹ 2100/-</div>
+                <p>Learn this fitness sport at all ages. Burns calories, enhances cognition, improves cardiovascular fitness.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Monday and Tuesday</p>
+                <p><strong>Time:</strong> 4:00 PM - 7:00 PM</p>
+                <p><strong>Venue:</strong> Badminton court</p>
+            </div>
+        </a>
+        <a href="#sportsform" class="course">
+            <img src="Basketball.jpg" alt="Basketball">
+            <div>
+                <h2>Basketball</h2>
+                <div class="price">₹ 2600/-</div>
+                <p>Learn this fitness sport at all ages. Burns calories, enhances cognition, improves cardiovascular fitness.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Monday</p>
+                <p><strong>Time:</strong> 5:30 PM - 7:00 PM</p>
+                <p><strong>Venue:</strong> Basketball court</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="course-wrapper">
+        <a href="#sportsform" class="course">
+            <img src="football.png" alt="Football">
+            <div>
+                <h2>Football</h2>
+                <div class="price">₹ 1600/-</div>
+                <p>Increases muscle and bone strength, builds strength, stamina and speed, and improves coordination and concentration of the mind. A great sport to inculcate sportsmanship and leadership qualities.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Monday to Saturday</p>
+                <p><strong>Time:</strong> 5:15 PM - 6:45 PM</p>
+                <p><strong>Venue:</strong> Main Ground</p>
+            </div>
+        </a>
+        <a href="#sportsform" class="course">
+            <img src="Functional_Fittness.jpg" alt="Functional Fitness">
+            <div>
+                <h2>Functional Fitness</h2>
+                <div class="price">₹ 2000/-</div>
+                <p>Functional Fitness focuses on exercises that mimic everyday activities, improving strength, flexibility, and balance. It enhances overall physical performance, reduces injury risk, and supports daily movements with greater ease and efficiency.</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> All year</p>
+                <p><strong>Days:</strong> Monday to Friday</p>
+                <p><strong>Time:</strong> 5:30 PM - 6:30 PM</p>
+                <p><strong>Venue:</strong> Wellness 1 - Second floor</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="course-wrapper">
+        <a href="#sportsform" class="course">
+            <img src="archery.jpg" alt="Archery">
+            <div>
+                <h2>Archery</h2>
+                <div class="price">₹ 2100/-</div>
+                <p>Join our Archery Classes starting from 5th October. Perfect for beginners and experienced archers, these classes will teach you the fundamentals and techniques of this exciting sport. Improve your focus, precision, and aim while having a blast. Don’t miss your chance to hit the bullseye and unleash your inner archer!</p>
+            </div>
+            <div class="details">
+                <p><strong>Date:</strong> 2024-09-25</p>
+                <p><strong>Days:</strong> Saturday and Sunday</p>
+                <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
+                <p><strong>Venue:</strong> Ground</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Form -->
+<div class="content" id="sportsform">
+    <div class="form-wrapper">
+        <h2>Enroll Now</h2>
+        <form action="http://localhost/schoolwebsite/DBCODES/s&fcourse.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_name">Guardian's Name</label>
+                <input type="text" id="guardian_name" name="guardian_name" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_contact">Guardian's Contact Number</label>
+                <input type="tel" id="guardian_contact" name="guardian_contact" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="Karate">Karate</option>
+                    <option value="Skating">Skating</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Football">Football</option>
+                    <option value="Fitness">Fitteen Fitness For kids</option>
+                    <option value="Archery">Archery</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-purple-200 py-10 mt-10">
+    <div class="container mx-auto text-center space-y-4">
+        <div class="flex justify-center items-center space-x-8">
+            <!-- Address Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Clickable Location Marker -->
+                <a href="https://maps.app.goo.gl/ixyfc4hpU9ZtMYis5" target="_blank" class="hover:text-red-500">
+                    <i class="fas fa-map-marker-alt text-black"></i>
+                </a>
+                <p class="footer-text">
+                    Don Bosco Academy,<br>Gate No: 4, Near Navya Nidhi CHS,<br>Sector 42A, Nerul, Navi Mumbai
+                </p>
+            </div>
+
+            <!-- Logo Section -->
+            <img src="dblogo1.png" class="rounded-full" width="140" height="80" alt="Logo"/>
+
+            <!-- Contact Section -->
+            <div class="flex flex-col items-center space-y-1">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-phone-alt text-black"></i>
+                    <p class="footer-text">+91 89765 72418 </p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-envelope text-black"></i>
+                    <p class="footer-text" >dbareception1@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Separator -->
+        <div style="border-top: 1px solid Black; margin-left: 200px; margin-right: 200px;"></div>
+
+        <!-- Links Section -->
+        <div class="flex justify-center space-x-4 footer-text">
+            <a class="hover:text-red-500" href="Terms.html" style="margin-left: 115px">Terms of Use</a>
+            <span>|</span>
+            <a class="hover:text-red-500" href="Privacy.html">Privacy Policy</a>
+        </div>
+
+        <!-- Footer Note -->
+        <p class="footer-text" style="margin-left: 120px">© 2024 Don Bosco Academy, Nerul. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
